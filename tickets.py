@@ -9,7 +9,7 @@ class tickets:
 	def __init__(self, carNumber, carColor):
 		self.carNumber = carNumber
 		self.carColor = carColor
-		print "hi avi"
+		print "hi parking guard!"
 		print "the car number is: " + str(self.carNumber)
 		print "the car color is: " + str(self.carColor)
 
@@ -19,7 +19,7 @@ class tickets:
 			ticket = str(slot) + "~" + self.carNumber +  "~" + self.carColor 
 			print ticket
 		else:
-			print ("Sorry, no slots left")
+			print ("Sorry, please go to somewhere else!")
 
 	def checkSlot(self):
 		print "Checking slots"
@@ -55,5 +55,8 @@ class tickets:
 		except (MySQLdb.Error, MySQLdb.Warning) as e:
 			print e
 
-a = tickets("AVI2", "White")
+car_number = raw_input("Please enter the car number: ")
+car_color = raw_input("Please enter the car color: ")
+
+a = tickets(car_number, car_color)
 a.generateTicket()
