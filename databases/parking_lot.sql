@@ -27,7 +27,7 @@ CREATE TABLE `Cars` (
   `car_number` varchar(255) NOT NULL,
   `car_color` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,6 +36,7 @@ CREATE TABLE `Cars` (
 
 LOCK TABLES `Cars` WRITE;
 /*!40000 ALTER TABLE `Cars` DISABLE KEYS */;
+INSERT INTO `Cars` VALUES (1,'UP-31-F-3393','White'),(2,'UP-32-BQ-2601','Black');
 /*!40000 ALTER TABLE `Cars` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -48,9 +49,10 @@ DROP TABLE IF EXISTS `Slots`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Slots` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `car_number` varchar(255) NOT NULL,
+  `car_number` varchar(255) DEFAULT NULL,
+  `car_color` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -59,6 +61,7 @@ CREATE TABLE `Slots` (
 
 LOCK TABLES `Slots` WRITE;
 /*!40000 ALTER TABLE `Slots` DISABLE KEYS */;
+INSERT INTO `Slots` VALUES (1,'UP-31-F-3393','Black'),(2,'UP-32-BQ-2601','White'),(3,'HR12F2540','Black'),(4,'HR12F2540','White'),(5,'AVI1','Black'),(6,'AVI2','White');
 /*!40000 ALTER TABLE `Slots` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -71,4 +74,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-03-28 22:32:42
+-- Dump completed on 2018-03-29 17:47:57
