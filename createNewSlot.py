@@ -23,9 +23,7 @@ class createNewSlot:
 				except (MySQLdb.Error, MySQLdb.Warning) as e:
 					print (e)
 
-
 		else:
 			print "Sorry, that is not an acceptable value for inserting the number of rows"
-
 
 ob = createNewSlot()
