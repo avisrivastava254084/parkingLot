@@ -45,13 +45,22 @@ class tickets:
 			row = row[0]
 			print "The id to be used is: " + str(row)
 			query = "update Slots set car_number = "+ "\""+ self.carNumber + "\"" + " where id = "+str(row)
-			print query
+			#print query
 			try:
 				self.cur.execute(query)
 				self.db.commit()
 				return row
 			except (MySQLdb.Error, MySQLdb.Warning) as e:
 				print e
+		except (MySQLdb.Error, MySQLdb.Warning) as e:
+			print e
+
+	def vacateSlot(self, slot):
+		print "Vacating the slot#: " + str(slot)
+		query = "drop from Slots where id = "+ str(slot)
+		try:
+			self.cur.execute(query)
+			self.db.commit()
 		except (MySQLdb.Error, MySQLdb.Warning) as e:
 			print e
 
